@@ -26,18 +26,26 @@ class WeatherInformation:
         #Get JSON ready to grab specific key and value's from JSON data
         X = forecast.json()
         Y = X['main']
+
+        wind = forecast.json()
+        wind_data = wind['wind']
         
         #Define calls for each data set
         temp = Y['temp']
+        feels = Y['feels_like']
         high = Y['temp_max']
         low = Y['temp_min']
         humidity = Y['humidity']
+        wind = wind_data['speed']
 
         #Print output to user, displaying all information.
         print(f"\nThanks! Your forecast today in {self.city.title()}, brought to you by Andrew:")
         print(f"\tTemperature: {temp}°F")
+        print(f"\tFeels like: {feels}°F")
         print(f"\tToday's High: {high}°F")
         print(f"\tToday's low: {low}°F")
+        print(f"\tWind: {wind} MPH")
         print(f"\tHumidity: {humidity}%")
+        
 
 
