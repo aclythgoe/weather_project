@@ -1,6 +1,5 @@
-#Import Requests for weather API
+#Import Requests for weather API and JSON 
 import requests
-import pprint
 import json
 
 
@@ -11,7 +10,6 @@ class WeatherInformation:
         #Initialize Zip_code and give the inputs
         self.zip_code = input("\nPlease enter your zip code (U.S. Only): ")
         self.city = input("Please enter your city: ")
-
     
     # Def get_weather to setup the API
     def get_weather(self):
@@ -20,7 +18,7 @@ class WeatherInformation:
 
          #Connection Test
         if forecast.status_code == 200:
-            print("Connection Succesful!")
+            print("\nConnection Succesful!")
         else: 
             print("!!! Error: Please check your Zip Code. !!!")
         
